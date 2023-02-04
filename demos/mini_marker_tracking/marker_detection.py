@@ -146,8 +146,8 @@ def find_marker(frame):
     # mask = cv2.inRange(gray, 5, 55)
 
     gray = frame[:,:,1] ### use only the green channel
-    im_blur_3 = cv2.GaussianBlur(gray,(3,3),5)
-    im_blur_8 = cv2.GaussianBlur(gray, (15,15),5)
+    im_blur_3 = cv2.GaussianBlur(gray,(7,7),9)
+    im_blur_8 = cv2.GaussianBlur(gray, (15,15),9)
     im_blur_sub = im_blur_8 - im_blur_3 + 128
     mask = cv2.inRange(im_blur_sub, 140, 255)
 
